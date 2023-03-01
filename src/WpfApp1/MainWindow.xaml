@@ -1,0 +1,43 @@
+﻿<Window x:Class="FileCopyReplayer.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileCopyReplayer.UI"
+        mc:Ignorable="d"
+        Title="File Replayer 20220301" ResizeMode="CanResizeWithGrip"  SizeChanged="Window_SizeChanged" MinWidth="700" MinHeight="380" WindowStyle="ThreeDBorderWindow">
+    <Grid UseLayoutRounding="False" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="128"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="44"/>
+
+            <RowDefinition Height="130*"/>
+            
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" >Source Folder</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="sourceFolderTextBox" HorizontalAlignment="Stretch" Text="" Margin="0,5,0,5" />
+        <Button Grid.Row="0" Grid.Column="2" x:Name="chooseSourceFolderButton" Content="..." Click="chooseSourceFolderButton_Click" Margin="0,5,0,5"   />
+
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Files"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="filesTextBox" HorizontalAlignment="Stretch" Text="List of files..." TextWrapping="Wrap" Margin="0,5,0,5" />
+        <Button Grid.Row="1" Grid.Column="2" x:Name="selectFilesButton" Content="Select" Height="20" Click="selectFilesButton_Click" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Destination"  />
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="destFolderTextBox" Margin="0,5,0,5" />
+        <Button Grid.Row="2" Grid.Column="2" x:Name="chooseDestFolderButton" Content="..." Click="chooseDestFolderButton_Click" Margin="0,5,0,5"  />
+
+        <Button x:Name="copyButton"  Content="Copy Files"  Grid.Row="3" Grid.Column="1" Click="copyButton_Click" FontSize="16" Grid.ColumnSpan="2" Margin="0,5,0,5" HorizontalAlignment="Right" Width="129"    />
+        <Label x:Name="resultsLabel" Content="" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" Margin="0,5,0,5" BorderThickness="1,1,1,1" BorderBrush="Black" Grid.ColumnSpan="3" />
+
+
+    </Grid>
+</Window>
